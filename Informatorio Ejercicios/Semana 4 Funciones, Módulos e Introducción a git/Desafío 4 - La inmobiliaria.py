@@ -1,33 +1,3 @@
-# print("DIVISOR DE NÚMEROS")
-# dividendo = int(input("Escriba el dividendo: "))
-# divisor = int(input("Escriba el divisor: "))
-
-# if dividendo % divisor:
-#     print(f"La división no es exacta. Cociente: {dividendo // divisor} "
-#                f"Resto: {dividendo % divisor}")
-# else:
-#     print(f"La división es exacta. Cociente: {dividendo // divisor}")
-
-# def agregar(lista):
-
-#     diccionario["Año"]=int(input("Ingrese el año del inmueble: "))
-#     diccionario["Metros"]=int(input("Ingrese los metros cuadrados del inmueble: "))
-#     diccionario["Habitaciones"]=int(input("Ingrese la cantidad de habitaciones del inmueble: "))
-#     garaje=input("Ingrese si el inmueble contiene un garaje: ")
-#     if (garaje=="Si" or garaje=="Sí" or garaje=="SÍ" or garaje=="sÍ" or garaje=="si" or garaje=="sí" or garaje=="SI"):
-#         garaje=True
-#         diccionario["Garaje"]=garaje
-#     else:
-#         garaje=False
-#         diccionario["Garaje"]=garaje
-#     diccionario["Zona"]=input("Ingrese la zona a la que pertenece el inmueble: ")
-#     diccionario["Estado"]=input("Ingrese el estado en que se encuentra el inmueble(Disponible, Reservado, Vendido): ")
-#     lista=diccionario
-#     return lista
-
-# diccionario={}
-# lista=[]
-# print(agregar(lista))
 def estadoValido(estado1):
     if (estado1=="disponible" or estado1=="reservado" or estado1=="vendido"):
        return estado1

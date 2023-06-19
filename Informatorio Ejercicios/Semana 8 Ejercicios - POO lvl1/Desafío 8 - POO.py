@@ -20,10 +20,8 @@ class Usuario:
         self.estado=estado
         self.online=online
 
-    def login(self):
-        k=0
-        nombre=input("Ingrese su usuario: ")
-        contraseña=input("Ingrese su contraseña: ")
+    def login(self, nombre, contraseña):
+        
         for x in range(len(usuarios_registrados)):
             if (usuarios_registrados[x].username==nombre and usuarios_registrados[x].contraseña==contraseña):
                 print(f"\n Bienvenido denuevo {usuarios_registrados[x].username}. \n")
@@ -40,42 +38,58 @@ class Usuario:
         teléfono=int(input("Ingrese su número de teléfono: "))
         username=input("Ingrese el nombre de usuario que utilizara: ")
         email=input("Ingrese su dirección de email: ")
+        contraseña=input("Ingrese su contraseña: ")
         fecha_de_registro=input("Ingrese la fecha actual(en formato dd/mm/aaaa): ")
         avatar=input("Ingrese el link de su avatar: ")
         estado="Activo"
         online="En linea"
-        datox=""
         if (usuarios_registrados[-1].id_usuario+1==3):
-            us3=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online,datox)
+            us3=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us3)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==4):
-            us4=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us4=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us4)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==5):
-            us5=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us5=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us5)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==6):
-            us6=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us6=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us6)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==7):
-            us7=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us7=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us7)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==8):
-            us8=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us8=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us8)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==9):
-            us9=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us9=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us9)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         elif (usuarios_registrados[-1].id_usuario+1==10):
-            us10=Usuario(id_usuario, nombre, apellido, teléfono, username, email, fecha_de_registro, avatar, estado, online)
+            us10=Usuario(id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online)
             usuarios_registrados.append(us10)
+            nombre_usuarios.append(username)
+            contraseña_usuarios.append(contraseña)
             return""
         else:
             return ("Error al registrarse.")
@@ -132,7 +146,7 @@ class Articulo:
 
 articulo_n=[1,2,3]
 articulos=["Flores","Edificio","Futbol"]
-comentarios=["Que bellas flores!!","Wow, que gran edificio","Te queremos Messi",]
+comentarios=["|Que bellas flores!!","|Wow, que gran edificio","|Te queremos Messi",]
 
 class Comentario:
     def __init__(self, id_comentario, id_articulo, id_usuario, contenido, fecha_hora, estado):
@@ -159,8 +173,17 @@ def escribir_comentario():
     elif n==4:
         com=input("Escriba su comentario: ")
         comentarios[3]=comentarios[3]+" | "+com
+    elif n==5:
+        com=input("Escriba su comentario: ")
+        comentarios[4]=comentarios[4]+" | "+com
+    elif n==6:
+        com=input("Escriba su comentario: ")
+        comentarios[5]=comentarios[5]+" | "+com
+    elif n==7:
+        com=input("Escriba su comentario: ")
+        comentarios[6]=comentarios[6]+" | "+com
     else:
-        print("error")
+        return("Articulo seleccionado invalido.")
 
 
 
@@ -171,31 +194,58 @@ def verplantilla():
     return ""
 
 def plantilla_colaborador():
-    print("  Menú Colaborador: \n 1- Comentar Articulo \n 2- Publicar Articulo \n 0- Desconectarse ")
+    print("  Menú Colaborador: \n 1- Comentar Articulo \n 2- Publicar Articulo \n 3- Ver Articulos \n 0- Desconectarse ")
     eleccion=int(input("Ingrese su elección: "))
     if eleccion==1:
         print(colaborador1.comentar())
+        plantilla_colaborador()
     elif eleccion==2:
         print(colaborador1.publicar())
-    elif eleccion==0:
+        plantilla_colaborador()
+    elif eleccion==3:
         print(verplantilla())
+        plantilla_colaborador()
+    elif eleccion==0:
+        print(menu_principal())
     else:
         print("Dato ingresado invalido, intente nuevamente.")
 
 def plantilla_publico():
-    print("  Menú: \n 1- Comentar Articulo \n 0- Desconectarse ")
+    print("  Menú: \n 1- Comentar Articulo \n 2- Ver Articulos\n 0- Desconectarse ")
     eleccion=int(input("Ingrese su elección: "))
     if eleccion==1:
         print(publico1.comentar())
-    elif eleccion==0:
+        plantilla_publico()
+    elif eleccion==2:
         print(verplantilla())
+        plantilla_publico()
+    elif eleccion==0:
+        menu_principal()
+    else:
+        print("Dato ingresado invalido, intente nuevamente.")
 
-us1=Colaborador(1,"carlitos","jerez",3644,"carlitos","gmail","carlitos1","fecha","avatar","estado","online","si")
+
+us1=Colaborador(1,"carlitos","jerez",3644,"carlitos","gmail","carlitos1","fecha","avatar","estado","online",True)
 us2=Colaborador(2,"usuario2","apellido2",3634,"username2","gmail2","contraseña2","fecha2","avatar2","estado2","online2",True)
+us3=Publico(3, "julian", "alvares", 3644, "julian", "gmail.com", "julian1", "fecha", "avatar", "estado", "online", True)
 
 
-usuarios_registrados=[us1,us2]
 
+# def __init__(self, id_usuario, nombre, apellido, teléfono, username, email, contraseña, fecha_de_registro, avatar, estado, online, es_publico):
+
+def menu_principal():
+    nombre=input("Ingrese su nombre de usuario: ")
+    contraseña=input("Ingrese su contraseña: ")
+    if ((nombre==us1.username and contraseña==us1.contraseña) or (nombre==us2.username and contraseña==us2.contraseña )):
+        print(plantilla_colaborador())
+    elif (nombre in nombre_usuarios and contraseña in contraseña_usuarios):
+        print(plantilla_publico())
+    else:
+        print("Contraseña incorrecta, intente nuevamente.")
+
+usuarios_registrados=[us1,us2,us3]
+nombre_usuarios=["carlitos","usuario2","julian"]
+contraseña_usuarios=["carlitos1", "contraseña2", "julian1"]
 
 publico1=Publico(1,"carlos","jerez",3644,"carlitos","gmail","carlitos1","15/06/23","avatar",True,True,True)
 
@@ -205,7 +255,7 @@ colaborador1=Colaborador(1,"seba","martinez",35445,"sebitas","gmailsebas","seba1
 
 articulo1=Articulo(2,1,"titulo","resumen","contenido","fecha","imagen","estado")
 
-print(usuarios_registrados[-1].id_usuario+1)
+# print(usuarios_registrados[-1].id_usuario+1)
 
 # print(publico1.registrar())
 
@@ -214,18 +264,17 @@ print(usuarios_registrados[-1].id_usuario+1)
 
 # print(verplantilla())
 
-menu= int(input("Menú Principal: \n 1-Login \n 2-Registrarse \n 0-Salir \n -Ingrese su elección: "))
+menu= int(input("Bienvenido a esta página! \n Menú Principal: \n 1-Login \n 2-Registrarse \n 0-Salir \n -Ingrese su elección: "))
+
 while menu !=0:
+    print("")
     if (menu==1):
-        if (publico1.login()):
-            print(verplantilla())
-            if (colaborador1.es_colaborador=="si"):
-                print(plantilla_colaborador())
-            else:
-                print(plantilla_publico())          
+        menu_principal()
+
     elif(menu==2):
-        print("")
+        publico1.registrar()
     else:
         print ("Dato ingresado invalido, Intente nuevamente.")
-    menu= int(input("Menú Principal: \n 1-Login \n 2-Registrarse \n 0-Salir \n -Ingrease su elección: "))
+    menu= int(input("Bienvenido a esta página! \n Menú Principal: \n 1-Login \n 2-Registrarse \n 0-Salir \n -Ingrease su elección: "))
+
     

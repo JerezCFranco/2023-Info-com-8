@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block titulo %} Nosotros {% endblock %}
+
+{% block contenido %} 
+
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #85C1E9;">
+    <a class="navbar-brand" href="#">Tabla de Navegación</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'inicio' %}" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'libros' %}" aria-current="page">Tienda <span class="visually-hidden">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tus Libros</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opciones</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Reportar Problema</a>
+                    <a class="dropdown-item" href="#">Contactar al Administrador</a>
+                </div>
+            </li>
+        </ul>
+        <form class="d-flex my-2 my-lg-0">
+            <input class="form-control me-sm-2" type="text" placeholder="¿Que desea buscar?">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#D6EAF8; border-color:#D6EAF8; color:black"">Explorar</button>
+        </form>
+    </div>
+</nav>
+<div class="table-responsive-sm">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Artículos de noticias</th>
+                <th scope="col">Resumen</th>
+                <th scope="col">Fuente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="">
+                <td scope="row">La justicia brasileña inhabilita a Bolsonaro para ejercer cualquier cargo electivo por 8 años.</td>
+                <td>El expresidente de Brasil Jair Bolsonaro fue inhabilitado para disputar elecciones hasta 2030, una condena que les asesta un duro revés a él y a su movimiento de derecha, aunque su polémica carrera política parece lejos de finalizar.</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/articles/cn0ln662l15o" role="button">Ver</a></td>
+                
+            </tr>
+            <tr class="">
+                <td scope="row">Las “partículas fantasma” de la Vía Láctea que un poderoso telescopio captó por primera vez desde la Tierra.</td>
+                <td>Un detector astronómico enterrado en el hielo antártico proporcionó una visión de nuestra galaxia nunca antes captada. 
+                    La imagen borrosa y extraordinaria es de la Vía Láctea, pero está compuesta por las “partículas fantasma” que emiten las reacciones que dan energía a las estrellas. Estas partículas son neutrinos y son extremadamente difíciles de detectar en la Tierra.</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/articles/cxrgkdyq716o" role="button">Ver</a></td>
+            </tr>
+            <tr class="">
+                <td scope="row">Los 3 países que tienen el salario mínimo más alto de América Latina (y para qué alcanza).</td>
+                <td>Los países con el sueldo mínimo mensual más alto en América Latina son Costa Rica (US$650), Chile (US$550) y Uruguay (US$550). 
+                    Las cifras a secas, sin ningún contexto, no reflejan el valor real que tiene ese dinero en cada país. Para eso, es necesario responder una pregunta básica: qué se puede comprar con esa cantidad. A final de cuentas, un salario es bajo o es alto en relación al costo de la vida.</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/articles/clexp369v2wo" role="button">Ver</a></td>
+                
+            </tr>
+            <tr class="">
+                <td scope="row">Qué es el "techo de papel" y cómo afecta las posibilidades laborales de millones de personas en Estados Unidos.</td>
+                <td>Se dice que quienes han pasado por una experiencia de este tipo se han estrellado contra el llamado "techo de papel", como en tiempos recientes se ha empezado a llamar a la situación en la que se encuentran aquellos trabajadores que no pueden optar a un cargo para el que tienen las habilidades, pero no el grado universitario exigido para ello.
+
+                    Se trata de una limitación muy extendida en el mundo laboral que afecta a más de 70 millones de personas en Estados Unidos, de acuerdo con estimaciones de la ONG Opportunity at Work (Oportunidades en el trabajo), que junto a otras instituciones lanzó este año una campaña para crear conciencia sobre este problema.</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/noticias-63841946" role="button">Ver</a></td>
+                
+            </tr>
+            <tr class="">
+                <td scope="row">Chile aprueba la jornada laboral de 40 horas semanales: ¿cuánto se trabaja en el resto de América Latina?.</td>
+                <td>El Congreso de Chile aprobó este martes reducir la jornada laboral semanal de 45 a 40 horas, convirtiendo a ese país en la nación de América Latina con la semana de trabajo más corta junto con Ecuador.</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/noticias-america-latina-65235477" role="button">Ver</a></td>
+                
+            </tr>
+            <tr class="">
+                <td scope="row">Quién inventó la famosa carita feliz y cómo terminó siendo un millonario negocio.</td>
+                <td>Está en todas partes en las redes sociales, enviamos y recibimos cientos de ellas a través de las apps de mensajería. Pero hoy son también el principal activo de una empresa que factura unos de US$500 millones al año. ¿Pero quién fue la mente detrás de este ícono del diseño? ¿Cómo una idea tan simple se convirtió en un próspero negocio? ¿Y cómo terminó en manos de alguien que no fue su creador original?</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/articles/cv2131w6w09o" role="button">Ver</a></td>
+                
+            </tr>
+            <tr class="">
+                <td scope="row">Virgin Galactic realiza con éxito su primer vuelo comercial al espacio.</td>
+                <td>Han tenido que pasar casi 20 años, pero el multimillonario británico Richard Branson logró que su avión cohete Unity, de su empresa de turismo espacial Virgin Galactic, realizara su primer viaje comercial al espacio. La nave se elevó sobre el desierto de Nuevo México este jueves para permitirles a tres italianos realizar experimentos científicos en condiciones de ingravidez. Fue la primera misión comercial al espacio de Virgin Galactic, que ya había realizado un vuelo de prueba.</td>
+                <td><a name="" id="" class="btn btn-primary" href="https://www.bbc.com/mundo/articles/c72vgwyrwr3o" role="button">Ver</a></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
+    

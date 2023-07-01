@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %} Editar nuevo libro {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        Editar información del libro
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del libro</h4>
+        {% include 'C:/2023-Info-com-8/Django/proyecto2/libreria/templates/libros/form.html' %}
+    </div>
+    <div class="card-footer text-muted">
+
+    </div>
+</div>
+
+{% endblock %}

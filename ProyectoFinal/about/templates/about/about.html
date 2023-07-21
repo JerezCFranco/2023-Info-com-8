@@ -1,0 +1,25 @@
+{% extends 'inicio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<title>Acerca de</title>
+<section class="page-section clearfix">
+  <div class="container">
+      <div class="intro">
+              <img class="intro-img img-fluid  mb-lg-0 rounded"  src="{% static 'img/Informatorio.jpg' %}" alt="" style="width: 40%; margin-left: 70px;">
+              <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                  <h2 class="section-heading mb-4" style="margin-top: -15px;">
+                      <span class="section-heading-lower">About</span>
+                      <span class="section-heading-upper">Acerca de la página</span>
+                  </h2>
+                  <div>
+                      <p class="mb-3" style="font-size: 18px;">La página es el Proyecto Final asignado a la Etapa 2 del Informatorio, esta página fue creada utilizando Visual Studio Code, Python, Django, biblioticas de Bootstrap y CSS.  </p>
+              </div>
+          </div>       
+      </div>
+  </div>
+</section>
+
+{% endblock %}

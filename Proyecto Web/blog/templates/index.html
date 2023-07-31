@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<title>Inicio</title>
+
+<section class="page-section clearfix" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <div class="container" style="padding-bottom: 400px;">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'img/inicio.png' %}" style="width: 40%; margin-left: 700px;" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Bienvenido!</span>
+            <span class="section-heading-lower">Este es el inicio de la página, sea bienvenido a explorar las secciónes ofrecidas en la barra de navegación</span>
+          </h2>
+          <p class="mb-3">Esta página es presentada por el grupo: Grupo.isEmpty().
+          </p>
+         
+        </div> 
+      </div>
+    </div>
+</section>
+
+{% endblock%}

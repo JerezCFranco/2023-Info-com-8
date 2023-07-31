@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<div class="container-fluid" style="margin: 20px;">
+
+    {% for i in posts %}
+
+        <title>posts</title>
+        <section class="page-section clearfix" style="margin-bottom: 15%;">
+            <div class="container">
+              <div class="intro">
+                <img class="intro-alter-img img-fluid mb-3 mb-lg-0 rounded" src="{{i.imagen.url}}" alt="" style="width: 45%;">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-left: 600px; margin-top: 0.1px;">
+                  <h2 class="section-heading mb-4" >
+                    <span class="section-heading-upper">{{i.titulo}}</span>
+                    <span class="section-heading-lower">{{i.subtitulo}}</span>
+                    <span class="section-heading-lower">{{i.contenido}}</span>
+                    <br>
+                    <a style="text-decoration: none;" href="{% url 'apps.posts:post_individual' i.id %}">
+                        Ingresá a este Post
+                  </h2>
+                  <div style="text-align: left; font-size: 1em;">
+    
+                    <p style="margin-right: 50px; color: white; text-decoration: none;">Fecha de creación: {{i.publicado}}</p>
+                    {% if user.is_superuser %}
+                        <a class="btn btn-danger nav-link" href="http://127.0.0.1:8000/admin/posts/post/add/" role="button">Agregar, modificar o eliminar un post</a>
+                    {% endif %}
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    {% empty %}
+        <h1>No hay registros</h1>
+
+    {% endfor%}
+
+</div>
+{% endblock%}

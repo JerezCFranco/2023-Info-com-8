@@ -21,12 +21,12 @@
         <img src="{% static 'img/info.png'%}" style="max-width: 300px; margin: 20px;">
     </a>
     
-    <div class="container" style="text-align: right; margin-right: 5px;">
+    <div class="container" style="text-align: right; margin-right: 5px; color: white;">
       {% if user.is_authenticated %}
-        <p class="nav-link text-uppercase text-expanded" style="color: white;">Hola {{ user.username }}!</p>
-        <button class="btn btn-dark" style="padding-bottom: 4px; padding-top: 4px; margin-bottom: 10px;"><a class="nav-link text-uppercase text-expanded" style="color: white;" href="{% url 'apps.usuario:logout' %}" id="nav-link">Desconectarse</a></button>
+        <p class="nav-link text-uppercase text-expanded">Hola {{ user.username }}!</p>
+        <button class="btn btn-dark logout-button"><a class="nav-link text-uppercase text-expanded" href="{% url 'apps.usuario:logout' %}" id="nav-link">Desconectarse</a></button>
       {% else %}
-        <button class="btn btn-info" style="padding-bottom: 4px; padding-top: 4px; margin-bottom: 10px;"><a class="nav-link text-uppercase text-expanded" style="color: white;" href="{% url 'apps.usuario:login' %}" id="nav-link">Iniciar Sesión</a></button>
+        <button class="btn btn-info login-button"><a class="nav-link text-uppercase text-expanded" href="{% url 'apps.usuario:login' %}" id="nav-link">Iniciar Sesión</a></button>
       {% endif %}
 </div> 
 

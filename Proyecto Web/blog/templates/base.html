@@ -1,4 +1,5 @@
 {% load static %}
+{% load colaborador_tags %}
 <!doctype html>
 <html lang="es-ar">
 
@@ -23,11 +24,25 @@
     
     <div class="container" style="text-align: right; margin-right: 5px; color: white;">
       {% if user.is_authenticated %}
-        <p class="nav-link text-uppercase text-expanded">Hola {{ user.username }}!</p>
+        <p class="nav-link text-uppercase text-expanded" style="margin-right: 20px;">Hola {{ user.username }}!</p>
+        {% if user.is_superuser or request.user|has_group:"Colaborador"  %}
+          <div class="dropdown" style="margin-right: 75px;">
+            <button class="dropbtn">Opciones</button>
+            <div class="dropdown-content">
+              <a href="{% url 'apps.usuario:usuario_list' %}">Lista de usuarios</a>
+              <a href="{% url 'apps.posts:categoria_list' %}">Lista de categorías</a>
+            </div>
+          </div>
+        
+        {% endif %}
+        <br><br>
         <button class="btn btn-dark logout-button"><a class="nav-link text-uppercase text-expanded" href="{% url 'apps.usuario:logout' %}" id="nav-link">Desconectarse</a></button>
       {% else %}
-        <button class="btn btn-info login-button"><a class="nav-link text-uppercase text-expanded" href="{% url 'apps.usuario:login' %}" id="nav-link">Iniciar Sesión</a></button>
+        <button class="btn btn-success login-button"><a class="nav-link text-uppercase text-expanded" href="{% url 'apps.usuario:login' %}" id="nav-link">Iniciar Sesión</a></button>
       {% endif %}
+      
+      
+    
 </div> 
 
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
